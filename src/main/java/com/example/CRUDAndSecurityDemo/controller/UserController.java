@@ -28,7 +28,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/addUser")
-	public User addUser(@RequestBody User user, @RequestParam String departmentName) {
+	public User addUser(@RequestBody User user, @RequestParam(required = false) String departmentName) { //making request parameter optional
 		return userService.addUser(user, departmentName);
 	}
 	
